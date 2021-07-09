@@ -148,7 +148,7 @@ Welcome to the skill tree select any node to begin your journey`
   return svg.node();
 }
 );
-  main.variable(observer("arc")).define("arc", ["margin"], function(margin){return(
+  main.variable(("arc")).define("arc", ["margin"], function(margin){return(
 function arc(d) {
   const y1 = d.source.y;
   const y2 = d.target.y;
@@ -156,22 +156,22 @@ function arc(d) {
   return `M${margin.left},${y1}A${r},${r} 0,0,${y1 < y2 ? 1 : 0} ${margin.left},${y2}`;
 }
 )});
-  main.variable(observer("y")).define("y", ["d3","graph","margin","height"], function(d3,graph,margin,height){return(
+  main.variable(("y")).define("y", ["d3","graph","margin","height"], function(d3,graph,margin,height){return(
 d3.scalePoint(graph.nodes.map(d => d.id).sort(d3.ascending), [margin.top, height - margin.bottom])
 )});
-  main.variable(observer("margin")).define("margin", function(){return(
+  main.variable(("margin")).define("margin", function(){return(
 {top: 20, right: 20, bottom: 20, left: 100}
 )});
-  main.variable(observer("height")).define("height", ["data","step","margin"], function(data,step,margin){return(
+  main.variable(("height")).define("height", ["data","step","margin"], function(data,step,margin){return(
 (data.nodes.length - 1) * step + margin.top + margin.bottom
 )});
-  main.variable(observer("step")).define("step", function(){return(
+  main.variable(("step")).define("step", function(){return(
 14
 )});
-  main.variable(observer("color")).define("color", ["d3","graph"], function(d3,graph){return(
+  main.variable(("color")).define("color", ["d3","graph"], function(d3,graph){return(
 d3.scaleOrdinal(graph.nodes.map(d => d.group).sort(d3.ascending), d3.schemeCategory10)
 )});
-  main.variable(observer("graph")).define("graph", ["data"], function(data)
+  main.variable(("graph")).define("graph", ["data"], function(data)
 {
   const nodes = data.nodes.map(({id, group}) => ({
     id,
@@ -197,10 +197,10 @@ d3.scaleOrdinal(graph.nodes.map(d => d.group).sort(d3.ascending), d3.schemeCateg
   return {nodes, links};
 }
 );
-  main.variable(observer("data")).define("data", ["FileAttachment"], function(FileAttachment){return(
+  main.variable(("data")).define("data", ["FileAttachment"], function(FileAttachment){return(
 FileAttachment("miserables.json").json()
 )});
-  main.variable(observer("d3")).define("d3", ["require"], function(require){return(
+  main.variable(("d3")).define("d3", ["require"], function(require){return(
 require("d3@5")
 )});
   return main;

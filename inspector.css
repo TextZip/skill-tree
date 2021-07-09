@@ -14,3 +14,4 @@
 .observablehq--error,.observablehq--red{color:#e7040f}
 .observablehq--inspect{font:var(--mono_fonts);overflow-x:auto;display:block;white-space:pre}
 .observablehq--error .observablehq--inspect{word-break:break-all;white-space:pre-wrap}
+
