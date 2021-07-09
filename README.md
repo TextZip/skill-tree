@@ -6,7 +6,7 @@ View this notebook in your browser by running a web server in this folder. For
 example:
 
 ~~~sh
-npx http-server
+npx http-server -c-1 -p 8010
 ~~~
 
 Or, use the [Observable Runtime](https://github.com/observablehq/runtime) to
